@@ -1,0 +1,8 @@
+module encoder4to2 (
+  input  [3:0] A,   
+  output [1:0] Y    
+);
+  assign Y[1] = A[3] | A[2];       
+  assign Y[0] = A[3] | (~A[2] & A[1]);
+
+endmodule
