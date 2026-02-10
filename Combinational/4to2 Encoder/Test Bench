@@ -1,0 +1,21 @@
+module tb;
+  reg  [3:0] A;   
+  wire [1:0] Y;   
+
+  encoder4to2 P(.A(A),.Y(Y));
+
+    initial begin
+      $display("Time\t A\t Y");
+      $monitor("%0dns\t %b\t %b", $time, A, Y);
+      $dumpfile("encoder4to2.vcd");
+                $dumpvars(0,tb);
+        A = 4'b0001; #10;
+        A = 4'b0010; #10; 
+        A = 4'b0100; #10; 
+        A = 4'b1000; #10;
+        A = 4'b1010; #10;
+        A = 4'b0111; #10;
+       $finish;
+    end
+
+endmodule
