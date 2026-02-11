@@ -1,0 +1,8 @@
+module decoder(
+  input En,A,B,
+  output D0,D1,D2,D3);
+  assign D0 = (En&!A&!B);
+  assign D1 = (En&!A&B);
+  assign D2 = (En&A&!B);
+  assign D3 = (En&A&B);
+endmodule
