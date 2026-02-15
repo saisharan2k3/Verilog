@@ -1,0 +1,21 @@
+//Design
+module NAND_gate(input a,b,output out);
+  assign out= ~(a&b);
+endmodule
+
+//Test_Bench
+module tb;
+  reg a,b;
+  wire out;
+  NAND_gate P(.a(a),.b(b),.out(out));
+  initial begin
+    $monitor("time = %0t | a = %b | b = %b | out = %b",$time,a,b,out);
+    $dumpfile("NAND_gate P.vcd");
+    $dumpvars(0,tb);
+       a=0; b=0;
+    #10 a=0; b=1;
+    #10 a=1; b=0;
+    #10 a=1; b=1;
+    #10 $finish;
+  end
+endmodule
