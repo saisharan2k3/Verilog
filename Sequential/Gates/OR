@@ -1,5 +1,5 @@
 // Design
-module OR_gate(input a,b,output out);
+module OR_GATE(input a,b,output out);
   assign out = a|b;
 endmodule
 
@@ -7,10 +7,10 @@ endmodule
 module tb;
   reg a,b;
   wire out;
-  OR_gate dut(.a(a),.b(b),.out(out));
+  OR_GATE P(.a(a),.b(b),.out(out));
   initial begin
-    $monitor("time = %0t | a = %b | b = %b | out = %b",$time,a,b,out);
-    $dumpfile("OR_tb.vcd");
+    $monitor("time = %0t a = %b b = %b out = %b",$time,a,b,out);
+    $dumpfile("OR_GATE P.vcd");
     $dumpvars(0,tb);
        a=0; b=0;
     #10 a=0; b=1;
