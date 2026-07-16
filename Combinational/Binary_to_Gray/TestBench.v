@@ -8,6 +8,7 @@ module tb;
     for (i=0;i<16;i=i+1)
     begin
       bi=i;
+      #1;
       $display("%0t\t    %b\t   %b",$time,bi,gray);
       #10;
     end
